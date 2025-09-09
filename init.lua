@@ -18,9 +18,9 @@ core.register_on_dieplayer(function(victim, reason)
 		if xp_redo then
             local penalty = math.floor(xp_redo.get_xp(killer_name)*xp_penalty.penalty)
 			xp_redo.add_xp(killer_name, -penalty)
-            xp_redo.add_xp(victim_name, penalty+1000)
-			core.chat_send_player(killer_name, "You lost " .. penalty .. " XP for repeat killing " .. victim_name)
-            core.chat_send_player(victim_name, "You gained " .. penalty+1000 .. " XP for ".. killer_name.." repeat killing you")
+            xp_redo.add_xp(victim_name, penalty)
+			core.chat_send_player(killer_name, "You lost ".. xp_penalty.penalty*100 .. "% of your XP (".. penalty .. "XP) for repeat killing " .. victim_name)
+            core.chat_send_player(victim_name, "You gained " .. penalty .. " XP for ".. killer_name.." repeat killing you")
 		else
 			core.log("warning", "[xp_penalty] xp_redo not found or not properly loaded.")
 		end

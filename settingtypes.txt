@@ -1,0 +1,5 @@
+# Time (in seconds) that counts as a repeat kill
+xp_penalty.repeat_kill_window (int) Time window in seconds for repeat kills. Default: 300
+
+# XP penalty for repeated kills
+xp_penalty.penalty (int) XP penalty applied on repeat kills. Default: 25
